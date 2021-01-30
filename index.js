@@ -1,6 +1,7 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import cors from 'cors';
+import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
+import router from "./src/controllers/index.js";
 
 const app = express();
 
@@ -22,9 +23,10 @@ app.use(bodyParser.urlencoded({
 
 app.use(cors());
 
+router(app);
 
-const server = app.listen(6000, () => {
-    console.log(`Success!! app listening on port 6000`);
+const server = app.listen(8000, () => {
+    console.log(`Success!! app listening on port 8000`);
 });
 
 export default server;
