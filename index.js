@@ -3,6 +3,8 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import router from "./src/controllers/index.js";
 
+require('dotenv').config();
+
 const app = express();
 
 const urlparser = express.urlencoded({
@@ -25,7 +27,7 @@ app.use(cors());
 
 router(app);
 
-const server = app.listen(8000, () => {
+const server = app.listen(process.env.PORT || 8000, () => {
     console.log(`Success!! app listening on port 8000`);
 });
 
