@@ -87,20 +87,20 @@ export default class RulesController {
             switch ( splittedField.length ) {
                 case 1 : 
                     if ( typeof data === 'object' && !data.hasOwnProperty(splittedField[0]) ) {
-                        errorHandler.handle('field '+splittedField[0]+' is missing in data', 400, res);
+                        errorHandler.handle('field '+splittedField[0]+' is missing from data', 400, res);
                     }
                     if (Array.isArray(data) || typeof data === 'string') {
                         if (!data[splittedField]) {
-                            errorHandler.handle('field '+splittedField[0]+' is missing in data', 400, res);
+                            errorHandler.handle('field '+splittedField[0]+' is missing from data', 400, res);
                         }
                     }
                     break;
                 case 2 :
                     if ( !data.hasOwnProperty(splittedField[0]) ) {
-                        errorHandler.handle('field '+splittedField[0]+' is missing in data', 400, res);
+                        errorHandler.handle('field '+splittedField[0]+' is missing from data', 400, res);
                     }
                     else if ( !data[splittedField[0]].hasOwnProperty(splittedField[1])) {
-                        errorHandler.handle('field '+field+' is missing in data', 400, res);
+                        errorHandler.handle('field '+field+' is missing from data', 400, res);
                     }
                     break;
             }
