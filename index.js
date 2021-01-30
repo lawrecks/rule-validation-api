@@ -3,8 +3,6 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import router from "./src/controllers/index.js";
 
-require('dotenv').config();
-
 const app = express();
 
 const urlparser = express.urlencoded({
